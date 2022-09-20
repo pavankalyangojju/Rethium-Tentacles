@@ -1,0 +1,1029 @@
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description"
+        content="Get started with a free and open source Tailwind CSS admin dashboard featuring a sidebar layout, advanced charts, and hundreds of components based on Flowbite">
+    <meta name="author" content="Themesberg">
+    <meta name="generator" content="Hugo 0.98.0">
+    <title>Dashboard</title>
+    <link rel="canonical" href="https://themesberg.com/product/tailwind-css/dashboard-windster">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="https://demo.themesberg.com/windster/app.css">
+    <link rel="apple-touch-icon" sizes="180x180" href="/static/favicon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/static/favicon.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/static/favicon.png">
+    <link rel="icon" type="image/png" href="/static/favicon.png">
+    <link rel="mask-icon" href="/static/favicon.png" color="#5bbad5">
+    <meta name="msapplication-TileColor" content="#ffffff">
+    <meta name="theme-color" content="#ffffff">
+    <meta property="og:url" content="https://demo.themesberg.com/windster/">
+    <meta property="og:title" content="Rethium - Dashboard">
+    <meta property="og:description"
+        content="A Dashboard for Rethium">
+    <meta property="og:type" content="website">
+    <meta property="og:image" content="http://143.110.176.59:5050/dashboard">
+    <meta property="og:image:type" content="/static/favicon.png">
+    <script src="/static/js/dashboard.js"></script>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+            font-family: sans-serif;
+          }
+          .chartMenu p{
+            padding: 10px;
+            font-size: 20px;
+          }
+          .chartCard{
+            width: 60vw;
+            height: calc(100vh - 20px);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-top: -200px;
+            margin-left: -850px;            
+          }
+          .chartBox{
+            width: 85%;
+            margin-top: 10px;
+          }
+          #startdate,#enddate{
+            border:none;
+            margin-top: -800px;
+            transform: translateX(350px);
+            color: white;
+            background-color: #4B96A3;
+      
+          }
+          #startdate,#enddate:hover{
+            cursor: pointer;
+          }
+          .chartBox:hover{
+            cursor: pointer;
+          }
+          #TOOO{
+            margin-top: -800px;
+            transform: translateX(350px);      
+          }
+          #home{
+            margin-left: 300px;
+            transform:translateY(-450px)
+          }
+          #tablelayout{
+            margin-top:550px;
+            transform: translateX(40px);      
+
+          }
+          #addbtnuse{
+            margin-top: 140px;
+            margin-left: -1210px
+        }
+        #addbtn{
+            margin-left: 45%;
+        }
+        #allUT{
+            margin-top: 90px;
+            margin-left: -605px;
+        }
+        #home{
+            margin-top: -70px;
+        }
+        #Company{
+            transform: translateX(10px);
+        }
+        #checkBox{
+            transform: translateX(-10px);
+        }
+        td{
+            transform: translateX(30px);
+        }
+        #checkBoxx{
+            transform: translateX(-13px)
+        }
+        footer{
+            width:85%;
+            transform: translateX(250px)
+
+        }
+
+
+    </style>
+</head>
+
+<body class="bg-gray-50">
+    <nav class="bg-white border-b border-gray-200 fixed z-30 w-full">
+        <div class="px-3 py-3 lg:px-5 lg:pl-3">
+            <div class="flex items-center justify-between">
+                <div class="flex items-center justify-start">
+                    <button id="toggleSidebarMobile" aria-expanded="true" aria-controls="sidebar"
+                        class="lg:hidden mr-2 text-gray-600 hover:text-gray-900 cursor-pointer p-2 hover:bg-gray-100 focus:bg-gray-100 focus:ring-2 focus:ring-gray-100 rounded">
+                        <svg id="toggleSidebarMobileHamburger" class="w-6 h-6" fill="currentColor" viewBox="0 0 20 20"
+                            xmlns="http://www.w3.org/2000/svg">
+                            <path fill-rule="evenodd"
+                                d="M3 5a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zM3 10a1 1 0 011-1h6a1 1 0 110 2H4a1 1 0 01-1-1zM3 15a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1z"
+                                clip-rule="evenodd"></path>
+                        </svg>
+                        <svg id="toggleSidebarMobileClose" class="w-6 h-6 hidden" fill="currentColor"
+                            viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
+                            <path fill-rule="evenodd"
+                                d="M4.293 4.293a1 1 0 011.414 0L10 8.586l4.293-4.293a1 1 0 111.414 1.414L11.414 10l4.293 4.293a1 1 0 01-1.414 1.414L10 11.414l-4.293 4.293a1 1 0 01-1.414-1.414L8.586 10 4.293 5.707a1 1 0 010-1.414z"
+                                clip-rule="evenodd"></path>
+                        </svg>
+                    </button>
+                    <a href="/" class="text-xl font-bold flex items-center lg:ml-2.5">
+                        <img src="/static/favicon.png" class="h-6 mr-2" alt="Windster Logo">
+                        <span class="self-center whitespace-nowrap">Tentacels</span>
+                    </a>
+                    <form action="#" method="GET" class="hidden lg:block lg:pl-32">
+                        <label for="topbar-search" class="sr-only">Search</label>
+                        <div class="mt-1 relative lg:w-64">
+                            <div class="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none">
+                                <svg class="w-5 h-5 text-gray-500" fill="currentColor" viewBox="0 0 20 20"
+                                    xmlns="http://www.w3.org/2000/svg">
+                                    <path fill-rule="evenodd"
+                                        d="M8 4a4 4 0 100 8 4 4 0 000-8zM2 8a6 6 0 1110.89 3.476l4.817 4.817a1 1 0 01-1.414 1.414l-4.816-4.816A6 6 0 012 8z"
+                                        clip-rule="evenodd"></path>
+                                </svg>
+                            </div>
+                            <input type="text" name="email" id="topbar-search"
+                                class="bg-gray-50 border border-gray-300 text-gray-900 sm:text-sm rounded-lg focus:ring-cyan-600 focus:border-cyan-600 block w-full pl-10 p-2.5"
+                                placeholder="Search">
+                        </div>
+                    </form>
+                </div>
+                <div class="flex items-center">
+                    <button id="toggleSidebarMobileSearch" type="button"
+                        class="lg:hidden text-gray-500 hover:text-gray-900 hover:bg-gray-100 p-2 rounded-lg">
+                        <span class="sr-only">Search</span>
+                        <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
+                            <path fill-rule="evenodd"
+                                d="M8 4a4 4 0 100 8 4 4 0 000-8zM2 8a6 6 0 1110.89 3.476l4.817 4.817a1 1 0 01-1.414 1.414l-4.816-4.816A6 6 0 012 8z"
+                                clip-rule="evenodd"></path>
+                        </svg>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </nav>
+    <div class="flex overflow-hidden bg-white pt-16">
+        <aside id="sidebar"
+            class="fixed hidden z-20 h-full top-0 left-0 pt-16 flex lg:flex flex-shrink-0 flex-col w-64 transition-width duration-75"
+            aria-label="Sidebar">
+            <div class="relative flex-1 flex flex-col min-h-0 border-r border-gray-200 bg-white pt-0">
+                <div class="flex-1 flex flex-col pt-5 pb-4 overflow-y-auto">
+                    <div class="flex-1 px-3 bg-white divide-y space-y-1">
+                        <ul class="space-y-2 pb-2">
+                            <li>
+                                <form action="#" method="GET" class="lg:hidden">
+                                    <label for="mobile-search" class="sr-only">Search</label>
+                                    <div class="relative">
+                                        <div
+                                            class="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none">
+                                            <svg class="w-5 h-5 text-gray-500" fill="currentColor" viewBox="0 0 20 20"
+                                                xmlns="http://www.w3.org/2000/svg">
+                                                <path
+                                                    d="M5 3a2 2 0 00-2 2v2a2 2 0 002 2h2a2 2 0 002-2V5a2 2 0 00-2-2H5zM5 11a2 2 0 00-2 2v2a2 2 0 002 2h2a2 2 0 002-2v-2a2 2 0 00-2-2H5zM11 5a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2h-2a2 2 0 01-2-2V5zM11 13a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2h-2a2 2 0 01-2-2v-2z">
+                                                </path>
+                                            </svg>
+                                        </div>
+                                        <input type="text" name="email" id="mobile-search"
+                                            class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-cyan-600 focus:ring-cyan-600 block w-full pl-10 p-2.5"
+                                            placeholder="Search">
+                                    </div>
+                                </form>
+                            </li>
+                            <li>
+                                <a href="/dashboard"
+                                    class="text-base text-gray-900 font-normal rounded-lg flex items-center p-2 hover:bg-gray-100 group">
+                                    <svg class="w-6 h-6 text-gray-500 group-hover:text-gray-900 transition duration-75"
+                                        fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
+                                        <path d="M2 10a8 8 0 018-8v8h8a8 8 0 11-16 0z"></path>
+                                        <path d="M12 2.252A8.014 8.014 0 0117.748 8H12V2.252z"></path>
+                                    </svg>
+                                    <span class="ml-3">Dashboard</span>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="/battery"
+                                    class="text-base text-gray-900 font-normal rounded-lg hover:bg-gray-100 flex items-center p-2 group ">
+                                    <svg class="w-6 h-6 text-gray-500 flex-shrink-0 group-hover:text-gray-900 transition duration-75"
+                                        fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
+                                        <path fill-rule="evenodd"
+                                            d="M10 9a3 3 0 100-6 3 3 0 000 6zm-7 9a7 7 0 1114 0H3z" clip-rule="evenodd">
+                                        </path>
+                                    </svg>
+                                    <span class="ml-3 flex-1 whitespace-nowrap">Battery Details</span>
+                                </a>
+                            </li>
+                            <!--<li>
+                                <a href="/graph"
+                                    class="text-base text-gray-900 font-normal rounded-lg hover:bg-gray-100 flex items-center p-2 group ">
+                                    <svg class="w-6 h-6 text-gray-500 flex-shrink-0 group-hover:text-gray-900 transition duration-75"
+                                        fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-bar-chart" viewBox="0 0 16 16">
+                                            <path d="M4 11H2v3h2v-3zm5-4H7v7h2V7zm5-5v12h-2V2h2zm-2-1a1 1 0 0 0-1 1v12a1 1 0 0 0 1 1h2a1 1 0 0 0 1-1V2a1 1 0 0 0-1-1h-2zM6 7a1 1 0 0 1 1-1h2a1 1 0 0 1 1 1v7a1 1 0 0 1-1 1H7a1 1 0 0 1-1-1V7zm-5 4a1 1 0 0 1 1-1h2a1 1 0 0 1 1 1v3a1 1 0 0 1-1 1H2a1 1 0 0 1-1-1v-3z"/>
+                                          </svg>
+                                    </svg>
+                                    <span class="ml-3 flex-1 whitespace-nowrap">Graph Data</span>
+                                </a>
+                            </li>-->
+                            <li>
+                                <a href="/registeruser"
+                                    class="text-base text-gray-900 font-normal rounded-lg hover:bg-gray-100 flex items-center p-2 group ">
+                                    <svg class="w-6 h-6 text-gray-500 flex-shrink-0 group-hover:text-gray-900 transition duration-75"
+                                        fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
+                                        <path fill-rule="evenodd"
+                                            d="M10 9a3 3 0 100-6 3 3 0 000 6zm-7 9a7 7 0 1114 0H3z" clip-rule="evenodd">
+                                        </path>
+                                    </svg>
+                                    <span class="ml-3 flex-1 whitespace-nowrap">Register User</span>
+                                </a>
+                            </li>
+                            <li>
+                                <a href=""
+                                    class="text-base text-gray-900 font-normal rounded-lg hover:bg-gray-100 flex items-center p-2 group ">
+                                    <svg class="w-6 h-6 text-gray-500 flex-shrink-0 group-hover:text-gray-900 transition duration-75"
+                                        fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
+                                        <path fill-rule="evenodd"
+                                            d="M10 2a4 4 0 00-4 4v1H5a1 1 0 00-.994.89l-1 9A1 1 0 004 18h12a1 1 0 00.994-1.11l-1-9A1 1 0 0015 7h-1V6a4 4 0 00-4-4zm2 5V6a2 2 0 10-4 0v1h4zm-6 3a1 1 0 112 0 1 1 0 01-2 0zm7-1a1 1 0 100 2 1 1 0 000-2z"
+                                            clip-rule="evenodd"></path>
+                                    </svg>
+                                    <span class="ml-3 flex-1 whitespace-nowrap">Admin Settings</span>
+                                </a>
+                            </li>
+                        </ul>
+                        <div class="space-y-2 pt-2">
+                            <a href="/update" target="_blank"
+                                class="text-base text-gray-900 font-normal rounded-lg hover:bg-gray-100 group transition duration-75 flex items-center p-2">
+                                <svg class="w-6 h-6 text-gray-500 flex-shrink-0 group-hover:text-gray-900 transition duration-75"
+                                    fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
+                                    <path fill-rule="evenodd"
+                                        d="M18 10a8 8 0 11-16 0 8 8 0 0116 0zm-2 0c0 .993-.241 1.929-.668 2.754l-1.524-1.525a3.997 3.997 0 00.078-2.183l1.562-1.562C15.802 8.249 16 9.1 16 10zm-5.165 3.913l1.58 1.58A5.98 5.98 0 0110 16a5.976 5.976 0 01-2.516-.552l1.562-1.562a4.006 4.006 0 001.789.027zm-4.677-2.796a4.002 4.002 0 01-.041-2.08l-.08.08-1.53-1.533A5.98 5.98 0 004 10c0 .954.223 1.856.619 2.657l1.54-1.54zm1.088-6.45A5.974 5.974 0 0110 4c.954 0 1.856.223 2.657.619l-1.54 1.54a4.002 4.002 0 00-2.346.033L7.246 4.668zM12 10a2 2 0 11-4 0 2 2 0 014 0z"
+                                        clip-rule="evenodd"></path>
+                                </svg>
+                                <span class="ml-3">Update App</span>
+                            </a>
+                            <a href="/" onclick="logout()"
+                                class="text-base text-gray-900 font-normal rounded-lg hover:bg-gray-100 group transition duration-75 flex items-center p-2">
+                                <svg class="w-6 h-6 text-gray-500 flex-shrink-0 group-hover:text-gray-900 transition duration-75"
+                                    fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
+                                    <path fill-rule="evenodd"
+                                        d="M18 10a8 8 0 11-16 0 8 8 0 0116 0zm-2 0c0 .993-.241 1.929-.668 2.754l-1.524-1.525a3.997 3.997 0 00.078-2.183l1.562-1.562C15.802 8.249 16 9.1 16 10zm-5.165 3.913l1.58 1.58A5.98 5.98 0 0110 16a5.976 5.976 0 01-2.516-.552l1.562-1.562a4.006 4.006 0 001.789.027zm-4.677-2.796a4.002 4.002 0 01-.041-2.08l-.08.08-1.53-1.533A5.98 5.98 0 004 10c0 .954.223 1.856.619 2.657l1.54-1.54zm1.088-6.45A5.974 5.974 0 0110 4c.954 0 1.856.223 2.657.619l-1.54 1.54a4.002 4.002 0 00-2.346.033L7.246 4.668zM12 10a2 2 0 11-4 0 2 2 0 014 0z"
+                                        clip-rule="evenodd"></path>
+                                </svg>
+                                <span class="ml-3">Logout</span>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </aside>
+        
+        <div class="bg-gray-900 opacity-50 hidden fixed inset-0 z-10" id="sidebarBackdrop"></div>
+        <div id="main-content" class="h-full w-full bg-gray-50 relative overflow-y-auto lg:ml-64">
+            <main>
+                <div class="pt-6 px-4">
+                    <div class="mt-4 w-full grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-4">
+                        <div class="bg-white shadow rounded-lg p-4 sm:p-6 xl:p-8 ">
+                            <div class="flex items-center">
+                                <div class="flex-shrink-0">
+                                    <span class="text-2xl sm:text-3xl leading-none font-bold text-gray-900"
+                                        id="BatteriesUsedToday">Checking</span>
+                                    <h3 class="text-base font-normal text-gray-500">Batteries Used Today</h3>
+                                </div>
+                                <script>DashboardStat("BatteriesUsedToday");</script>
+                            </div>
+                        </div>
+                        <div class="bg-white shadow rounded-lg p-4 sm:p-6 xl:p-8 ">
+                            <div class="flex items-center">
+                                <div class="flex-shrink-0">
+                                    <span class="text-2xl sm:text-3xl leading-none font-bold text-gray-900"
+                                        id="BatteriesDispatched">Checking</span>
+                                    <h3 class="text-base font-normal text-gray-500">Batteries Dispatched</h3>
+                                </div>
+                                <script>DashboardStat("BatteriesDispatched");</script>
+                            </div>
+                        </div>
+                        <div class="bg-white shadow rounded-lg p-4 sm:p-6 xl:p-8 ">
+                            <div class="flex items-center">
+                                <div class="flex-shrink-0">
+                                    <span class="text-2xl sm:text-3xl leading-none font-bold text-gray-900"
+                                        id="NoOfCompanies">Checking</span>
+                                    <h3 class="text-base font-normal text-gray-500">No Of Companies</h3>
+                                </div>
+                                <script>DashboardStat("NoOfCompanies");</script>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="grid grid-cols-1 2xl:grid-cols-2 xl:gap-4 my-4">
+                        <!-- Top Sales Card -->
+                        <!-- <div class="bg-white shadow rounded-lg mb-4 p-4 sm:p-6 h-full">
+                            <div class="flex items-center justify-between mb-4">
+                                <h3 class="text-xl font-bold leading-none text-gray-900">Sample Table</h3>
+                            </div>
+                            <div class="flow-root">
+                                <ul role="list" class="divide-y divide-gray-200">
+                                    <li class="py-3 sm:py-4">
+                                        <div class="flex items-center space-x-4">
+                                            <div class="flex-shrink-0">
+                                                <img class="h-8 w-8 rounded-full"
+                                                    src="https://demo.themesberg.com/windster/images/users/neil-sims.png"
+                                                    alt="Neil image">
+                                            </div>
+                                            <div class="flex-1 min-w-0">
+                                                <p class="text-sm font-medium text-gray-900 truncate">
+                                                    Neil Sims
+                                                </p>
+                                                <p class="text-sm text-gray-500 truncate">
+                                                    email@windster.com
+                                                </p>
+                                            </div>
+                                            <div class="inline-flex items-center text-base font-semibold text-gray-900">
+                                                $320
+                                            </div>
+                                            <div>
+                                                <button class="text-white bg-cyan-600 hover:bg-cyan-700 focus:ring-4 focus:ring-cyan-200 font-medium rounded-lg text-sm px-5 py-2.5 text-center">View Data</button>
+                                            </div>
+                                        </div>
+                                    </li>
+                                    <li class="py-3 sm:py-4">
+                                        <div class="flex items-center space-x-4">
+                                            <div class="flex-shrink-0">
+                                                <img class="h-8 w-8 rounded-full"
+                                                    src="https://demo.themesberg.com/windster/images/users/bonnie-green.png"
+                                                    alt="Neil image">
+                                            </div>
+                                            <div class="flex-1 min-w-0">
+                                                <p class="text-sm font-medium text-gray-900 truncate">
+                                                    Bonnie Green
+                                                </p>
+                                                <p class="text-sm text-gray-500 truncate">
+                                                    email@windster.com
+                                                </p>
+                                            </div>
+                                            <div class="inline-flex items-center text-base font-semibold text-gray-900">
+                                                $3467
+                                            </div>
+                                            <div>
+                                                <button class="text-white bg-cyan-600 hover:bg-cyan-700 focus:ring-4 focus:ring-cyan-200 font-medium rounded-lg text-sm px-5 py-2.5 text-center">View Data</button>
+                                            </div>
+                                        </div>
+                                    </li>
+                                    <li class="py-3 sm:py-4">
+                                        <div class="flex items-center space-x-4">
+                                            <div class="flex-shrink-0">
+                                                <img class="h-8 w-8 rounded-full"
+                                                    src="https://demo.themesberg.com/windster/images/users/michael-gough.png"
+                                                    alt="Neil image">
+                                            </div>
+                                            <div class="flex-1 min-w-0">
+                                                <p class="text-sm font-medium text-gray-900 truncate">
+                                                    Michael Gough
+                                                </p>
+                                                <p class="text-sm text-gray-500 truncate">
+                                                    email@windster.com
+                                                </p>
+                                            </div>
+                                            <div class="inline-flex items-center text-base font-semibold text-gray-900">
+                                                $67
+                                            </div>
+                                            <div>
+                                                <button class="text-white bg-cyan-600 hover:bg-cyan-700 focus:ring-4 focus:ring-cyan-200 font-medium rounded-lg text-sm px-5 py-2.5 text-center">View Data</button>
+                                            </div>
+                                        </div>
+                                    </li>
+                                    <li class="py-3 sm:py-4">
+                                        <div class="flex items-center space-x-4">
+                                            <div class="flex-shrink-0">
+                                                <img class="h-8 w-8 rounded-full"
+                                                    src="https://demo.themesberg.com/windster/images/users/thomas-lean.png"
+                                                    alt="Neil image">
+                                            </div>
+                                            <div class="flex-1 min-w-0">
+                                                <p class="text-sm font-medium text-gray-900 truncate">
+                                                    Thomes Lean
+                                                </p>
+                                                <p class="text-sm text-gray-500 truncate">
+                                                    email@windster.com
+                                                </p>
+                                            </div>
+                                            <div class="inline-flex items-center text-base font-semibold text-gray-900">
+                                                $2367
+                                            </div>
+                                            <div>
+                                                <button class="text-white bg-cyan-600 hover:bg-cyan-700 focus:ring-4 focus:ring-cyan-200 font-medium rounded-lg text-sm px-5 py-2.5 text-center">View Data</button>
+                                            </div>
+                                        </div>
+                                    </li>
+                                    <li class="pt-3 sm:pt-4 pb-0">
+                                        <div class="flex items-center space-x-4">
+                                            <div class="flex-shrink-0">
+                                                <img class="h-8 w-8 rounded-full"
+                                                    src="https://demo.themesberg.com/windster/images/users/lana-byrd.png"
+                                                    alt="Neil image">
+                                            </div>
+                                            <div class="flex-1 min-w-0">
+                                                <p class="text-sm font-medium text-gray-900 truncate">
+                                                    Lana Byrd
+                                                </p>
+                                                <p class="text-sm text-gray-500 truncate">
+                                                    email@windster.com
+                                                </p>
+                                            </div>
+                                            <div class="inline-flex items-center text-base font-semibold text-gray-900">
+                                                $367
+                                            </div>
+                                            <div>
+                                                <button class="text-white bg-cyan-600 hover:bg-cyan-700 focus:ring-4 focus:ring-cyan-200 font-medium rounded-lg text-sm px-5 py-2.5 text-center">View Data</button>
+                                            </div>
+                                        </div>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div> -->
+                        <!-- Sessions by device Card -->
+                        <!-- <div class="bg-white shadow rounded-lg p-4 sm:p-6 xl:p-8 "> /////////////
+                             Card Titl                            <<h3 class="text-xl leading-none font-bold text-gray-900 mb-10">Sample Table</h3>
+                            <div class="block w-full overflow-x-auto"id="Sample-Table">
+                                <table class="items-center w-full bg-transparent border-collapse">
+                                    <thead>
+                                        <tr>
+                                            <th
+                                                class="px-4 bg-gray-50 text-gray-700 align-middle py-3 text-xs font-semibold text-left uppercase border-l-0 border-r-0 whitespace-nowrap">
+                                                Top Channels</th>
+                                            <th
+                                                class="px-4 bg-gray-50 text-gray-700 align-middle py-3 text-xs font-semibold text-left uppercase border-l-0 border-r-0 whitespace-nowrap">
+                                                Users</th>
+                                            <th
+                                                class="px-4 bg-gray-50 text-gray-700 align-middle py-3 text-xs font-semibold text-left uppercase border-l-0 border-r-0 whitespace-nowrap min-w-140-px">
+                                            </th>
+                                        </tr>
+                                    </thead>
+                                    <tbody class="divide-y divide-gray-100">
+                                        <tr class="text-gray-500">
+                                            <th
+                                                class="border-t-0 px-4 align-middle text-sm font-normal whitespace-nowrap p-4 text-left">
+                                                Organic Search</th>
+                                            <td
+                                                class="border-t-0 px-4 align-middle text-xs font-medium text-gray-900 whitespace-nowrap p-4">
+                                                5,649</td>
+                                            <td class="border-t-0 px-4 align-middle text-xs whitespace-nowrap p-4">
+                                                <div class="flex items-center">
+                                                    <span class="mr-2 text-xs font-medium">30%</span>
+                                                    <div class="relative w-full">
+                                                        <div class="w-full bg-gray-200 rounded-sm h-2">
+                                                            <div class="bg-cyan-600 h-2 rounded-sm" style="width: 30%">
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </td>
+                                        </tr>
+                                        <tr class="text-gray-500">
+                                            <th
+                                                class="border-t-0 px-4 align-middle text-sm font-normal whitespace-nowrap p-4 text-left">
+                                                Referral</th>
+                                            <td
+                                                class="border-t-0 px-4 align-middle text-xs font-medium text-gray-900 whitespace-nowrap p-4">
+                                                4,025</td>
+                                            <td class="border-t-0 px-4 align-middle text-xs whitespace-nowrap p-4">
+                                                <div class="flex items-center">
+                                                    <span class="mr-2 text-xs font-medium">24%</span>
+                                                    <div class="relative w-full">
+                                                        <div class="w-full bg-gray-200 rounded-sm h-2">
+                                                            <div class="bg-orange-300 h-2 rounded-sm"
+                                                                style="width: 24%"></div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </td>
+                                        </tr>
+                                        <tr class="text-gray-500">
+                                            <th
+                                                class="border-t-0 px-4 align-middle text-sm font-normal whitespace-nowrap p-4 text-left">
+                                                Direct</th>
+                                            <td
+                                                class="border-t-0 px-4 align-middle text-xs font-medium text-gray-900 whitespace-nowrap p-4">
+                                                3,105</td>
+                                            <td class="border-t-0 px-4 align-middle text-xs whitespace-nowrap p-4">
+                                                <div class="flex items-center">
+                                                    <span class="mr-2 text-xs font-medium">18%</span>
+                                                    <div class="relative w-full">
+                                                        <div class="w-full bg-gray-200 rounded-sm h-2">
+                                                            <div class="bg-teal-400 h-2 rounded-sm" style="width: 18%">
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </td>
+                                        </tr>
+                                        <tr class="text-gray-500">
+                                            <th
+                                                class="border-t-0 px-4 align-middle text-sm font-normal whitespace-nowrap p-4 text-left">
+                                                Social</th>
+                                            <td
+                                                class="border-t-0 px-4 align-middle text-xs font-medium text-gray-900 whitespace-nowrap p-4">
+                                                1251</td>
+                                            <td class="border-t-0 px-4 align-middle text-xs whitespace-nowrap p-4">
+                                                <div class="flex items-center">
+                                                    <span class="mr-2 text-xs font-medium">12%</span>
+                                                    <div class="relative w-full">
+                                                        <div class="w-full bg-gray-200 rounded-sm h-2">
+                                                            <div class="bg-pink-600 h-2 rounded-sm" style="width: 12%">
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </td>
+                                        </tr>
+                                        <tr class="text-gray-500">
+                                            <th
+                                                class="border-t-0 px-4 align-middle text-sm font-normal whitespace-nowrap p-4 text-left">
+                                                Other</th>
+                                            <td
+                                                class="border-t-0 px-4 align-middle text-xs font-medium text-gray-900 whitespace-nowrap p-4">
+                                                734</td>
+                                            <td class="border-t-0 px-4 align-middle text-xs whitespace-nowrap p-4">
+                                                <div class="flex items-center">
+                                                    <span class="mr-2 text-xs font-medium">9%</span>
+                                                    <div class="relative w-full">
+                                                        <div class="w-full bg-gray-200 rounded-sm h-2">
+                                                            <div class="bg-indigo-600 h-2 rounded-sm" style="width: 9%">
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </td>
+                                        </tr>
+                                        <tr class="text-gray-500">
+                                            <th
+                                                class="border-t-0 align-middle text-sm font-normal whitespace-nowrap p-4 pb-0 text-left">
+                                                Email</th>
+                                            <td
+                                                class="border-t-0 align-middle text-xs font-medium text-gray-900 whitespace-nowrap p-4 pb-0">
+                                                456</td>
+                                            <td class="border-t-0 align-middle text-xs whitespace-nowrap p-4 pb-0">
+                                                <div class="flex items-center">
+                                                    <span class="mr-2 text-xs font-medium">7%</span>
+                                                    <div class="relative w-full">
+                                                        <div class="w-full bg-gray-200 rounded-sm h-2">
+                                                            <div class="bg-purple-500 h-2 rounded-sm" style="width: 7%">
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>-->
+                                <table id="tablelayout">
+                                    <thead class="bg-gray-90" id="tabledataTD">
+                                        <tr style="background-color: #BEDEE3;">
+                                            <td scope="col" class="p-4 text-left text-xs font-medium text-white-500 uppercase" id="Company">Company Name</td>
+                                            <td scope="col" class="p-4 text-left text-xs font-medium text-white-500 uppercase">UUID</td>
+                                            <!--<td scope="col" class="p-4 text-left text-xs font-medium text-gray-500 uppercase">Password</td>-->
+                                            <td scope="col" class="p-4 text-left text-xs font-medium text-white-500 uppercase">MacID</td>
+                                            <td scope="col" class="p-4 text-left text-xs font-medium text-white-500 uppercase">STATUS</td>
+                                            <td class="p-4 text-left text-xs font-medium text-red-500 uppercase"><a href="/battery" >View All</a></td>
+                                            <td></td>
+                                            <td></td>
+                                        </tr>
+                
+                                    </thead>
+                
+                                </table>
+                                <!--sample of the data of the things in the dashboard-->
+                                <!--<h3 class="text-xl leading-none font-bold text-gray-900 mb-10">Sample Table</h3>
+                                <div class="block w-full overflow-x-auto"id="Sample-Table">
+                                    <table class="items-center w-full bg-transparent border-collapse">
+                                        <thead>
+                                            <tr>
+                                                <th
+                                                    class="px-4 bg-gray-50 text-gray-700 align-middle py-3 text-xs font-semibold text-left uppercase border-l-0 border-r-0 whitespace-nowrap">
+                                                    Top Channels</th>
+                                                <th
+                                                    class="px-4 bg-gray-50 text-gray-700 align-middle py-3 text-xs font-semibold text-left uppercase border-l-0 border-r-0 whitespace-nowrap">
+                                                    Users</th>
+                                                <th
+                                                    class="px-4 bg-gray-50 text-gray-700 align-middle py-3 text-xs font-semibold text-left uppercase border-l-0 border-r-0 whitespace-nowrap min-w-140-px">
+                                                </th>
+                                            </tr>
+                                        </thead>
+                                        <tbody class="divide-y divide-gray-100">
+                                            <tr class="text-gray-500">
+                                                <th
+                                                    class="border-t-0 px-4 align-middle text-sm font-normal whitespace-nowrap p-4 text-left">
+                                                    Organic Search</th>
+                                                <td
+                                                    class="border-t-0 px-4 align-middle text-xs font-medium text-gray-900 whitespace-nowrap p-4">
+                                                    5,649</td>
+                                                <td class="border-t-0 px-4 align-middle text-xs whitespace-nowrap p-4">
+                                                    <div class="flex items-center">
+                                                        <span class="mr-2 text-xs font-medium">30%</span>
+                                                        <div class="relative w-full">
+                                                            <div class="w-full bg-gray-200 rounded-sm h-2">
+                                                                <div class="bg-cyan-600 h-2 rounded-sm" style="width: 30%">
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </td>
+                                            </tr>
+                                            <tr class="text-gray-500">
+                                                <th
+                                                    class="border-t-0 px-4 align-middle text-sm font-normal whitespace-nowrap p-4 text-left">
+                                                    Referral</th>
+                                                <td
+                                                    class="border-t-0 px-4 align-middle text-xs font-medium text-gray-900 whitespace-nowrap p-4">
+                                                    4,025</td>
+                                                <td class="border-t-0 px-4 align-middle text-xs whitespace-nowrap p-4">
+                                                    <div class="flex items-center">
+                                                        <span class="mr-2 text-xs font-medium">24%</span>
+                                                        <div class="relative w-full">
+                                                            <div class="w-full bg-gray-200 rounded-sm h-2">
+                                                                <div class="bg-orange-300 h-2 rounded-sm"
+                                                                    style="width: 24%"></div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </td>
+                                            </tr>
+                                            <tr class="text-gray-500">
+                                                <th
+                                                    class="border-t-0 px-4 align-middle text-sm font-normal whitespace-nowrap p-4 text-left">
+                                                    Direct</th>
+                                                <td
+                                                    class="border-t-0 px-4 align-middle text-xs font-medium text-gray-900 whitespace-nowrap p-4">
+                                                    3,105</td>
+                                                <td class="border-t-0 px-4 align-middle text-xs whitespace-nowrap p-4">
+                                                    <div class="flex items-center">
+                                                        <span class="mr-2 text-xs font-medium">18%</span>
+                                                        <div class="relative w-full">
+                                                            <div class="w-full bg-gray-200 rounded-sm h-2">
+                                                                <div class="bg-teal-400 h-2 rounded-sm" style="width: 18%">
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </td>
+                                            </tr>
+                                            <tr class="text-gray-500">
+                                                <th
+                                                    class="border-t-0 px-4 align-middle text-sm font-normal whitespace-nowrap p-4 text-left">
+                                                    Social</th>
+                                                <td
+                                                    class="border-t-0 px-4 align-middle text-xs font-medium text-gray-900 whitespace-nowrap p-4">
+                                                    1251</td>
+                                                <td class="border-t-0 px-4 align-middle text-xs whitespace-nowrap p-4">
+                                                    <div class="flex items-center">
+                                                        <span class="mr-2 text-xs font-medium">12%</span>
+                                                        <div class="relative w-full">
+                                                            <div class="w-full bg-gray-200 rounded-sm h-2">
+                                                                <div class="bg-pink-600 h-2 rounded-sm" style="width: 12%">
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </td>
+                                            </tr>
+                                            <tr class="text-gray-500">
+                                                <th
+                                                    class="border-t-0 px-4 align-middle text-sm font-normal whitespace-nowrap p-4 text-left">
+                                                    Other</th>
+                                                <td
+                                                    class="border-t-0 px-4 align-middle text-xs font-medium text-gray-900 whitespace-nowrap p-4">
+                                                    734</td>
+                                                <td class="border-t-0 px-4 align-middle text-xs whitespace-nowrap p-4">
+                                                    <div class="flex items-center">
+                                                        <span class="mr-2 text-xs font-medium">9%</span>
+                                                        <div class="relative w-full">
+                                                            <div class="w-full bg-gray-200 rounded-sm h-2">
+                                                                <div class="bg-indigo-600 h-2 rounded-sm" style="width: 9%">
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </td>
+                                            </tr>
+                                            <tr class="text-gray-500">
+                                                <th
+                                                    class="border-t-0 align-middle text-sm font-normal whitespace-nowrap p-4 pb-0 text-left">
+                                                    Email</th>
+                                                <td
+                                                    class="border-t-0 align-middle text-xs font-medium text-gray-900 whitespace-nowrap p-4 pb-0">
+                                                    456</td>
+                                                <td class="border-t-0 align-middle text-xs whitespace-nowrap p-4 pb-0">
+                                                    <div class="flex items-center">
+                                                        <span class="mr-2 text-xs font-medium">7%</span>
+                                                        <div class="relative w-full">
+                                                            <div class="w-full bg-gray-200 rounded-sm h-2">
+                                                                <div class="bg-purple-500 h-2 rounded-sm" style="width: 7%">
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                </div>-->
+                            
+
+
+
+
+
+
+                            <!--END sample-->
+                            <div class="chartCard">
+                                <!--<input onchange="filterData()" type="date" id="startdate" value="2021-08-01"><span id="TOOO">TO</span>
+                                <input onchange="filterData()" type="date" id="enddate"   value="2021-10-31" style="background-color: #E24923;">-->
+                                <div class="chartBox">
+                                  <canvas id="myChart"></canvas>
+                                  <!--<input onchange="filterData()" type="date" id="startdate" value="2021-08-01"> TO
+                                  <input onchange="filterData()" type="date" id="enddate"   value="2021-10-30">-->
+                                </div>
+                            </div>
+                              <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+                              
+                              
+                              <script>
+                                const dates = [
+                                '2021-08-01', 
+                                '2021-08-02', 
+                                '2021-08-03', 
+                                '2021-08-04', 
+                                '2021-08-05', 
+                                '2021-08-06', 
+                                '2021-08-07', 
+                                '2021-08-08', 
+                                '2021-08-09', 
+                                '2021-08-10', 
+                                '2021-08-11', 
+                                '2021-08-12', 
+                                '2021-08-13', 
+                                '2021-08-14', 
+                                '2021-08-15', 
+                                '2021-08-16', 
+                                '2021-08-17', 
+                                '2021-08-18', 
+                                '2021-08-19', 
+                                '2021-08-20', 
+                                '2021-08-21', 
+                                '2021-08-22', 
+                                '2021-08-23', 
+                                '2021-08-24', 
+                                '2021-08-25', 
+                                '2021-08-26', 
+                                '2021-08-27', 
+                                '2021-08-28', 
+                                '2021-08-29', 
+                                '2021-08-30', 
+                                '2021-08-31',
+                                '2021-09-01',
+                                '2021-09-02',
+                                '2021-09-03',
+                                '2021-09-04',
+                                '2021-09-05',
+                                '2021-09-06',
+                                '2021-09-07',
+                                '2021-09-08',
+                                '2021-09-09',
+                                '2021-09-10',
+                                '2021-09-11',
+                                '2021-09-12',
+                                '2021-09-13',
+                                '2021-09-14',
+                                '2021-09-15',
+                                '2021-09-16',
+                                '2021-09-17',
+                                '2021-09-18',
+                                '2021-09-19',
+                                '2021-09-20',
+                                '2021-09-21',
+                                '2021-09-22',
+                                '2021-09-23',
+                                '2021-09-24',
+                                '2021-09-25',
+                                '2021-09-26',
+                                '2021-09-27',
+                                '2021-09-28',
+                                '2021-09-29',
+                                '2021-09-30',
+                                '2021-10-01', 
+                                '2021-10-02', 
+                                '2021-10-03', 
+                                '2021-10-04', 
+                                '2021-10-05', 
+                                '2021-10-06', 
+                                '2021-10-07', 
+                                '2021-10-08', 
+                                '2021-10-09', 
+                                '2021-10-10', 
+                                '2021-10-11', 
+                                '2021-10-12', 
+                                '2021-10-13', 
+                                '2021-10-14', 
+                                '2021-10-15', 
+                                '2021-10-16', 
+                                '2021-10-17', 
+                                '2021-10-18', 
+                                '2021-10-19', 
+                                '2021-10-20', 
+                                '2021-10-21', 
+                                '2021-10-22', 
+                                '2021-10-23', 
+                                '2021-10-24', 
+                                '2021-10-25', 
+                                '2021-10-26', 
+                                '2021-10-27', 
+                                '2021-10-28', 
+                                '2021-10-29', 
+                                '2021-10-30', 
+                                '2021-10-31',
+                              ];
+                                const datapoints = [26,27,28,29,26,25,0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29,30,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,23,22,21,20,19,18,17,16,15,14,13,12,11,10,9,8,7,6,5,4,3,2,1,0,10,20,30,40,50,60];
+                                const data ={
+                                  labels: dates,
+                                  datasets: [{
+                                    label: 'Both(current & Voltage)',
+                                    data: datapoints,
+                                    backgroundColor: [
+                                      'rgb(75,150,163)',
+                                    ],
+                                    borderColor: [
+                                      'rgb(75,150,163)',
+                                    ],
+                                    tension: 0.4
+                                  }]
+                            
+                                };
+                            //config
+                                const config = {
+                                  type: 'line',
+                                  data,
+                                  Options:{
+                                    scales:{
+                                      y:{
+                                        beginAtZero: true
+                                      }
+                                    }
+                                  }
+                                };
+                                //render init block
+                                const myChart = new Chart(
+                                  document.getElementById('myChart'),
+                                  config
+                                );
+                            
+                                function filterData(){
+                                  const dates2 = [...dates];
+                                  //console.log(dates2);
+                                  const startdate = document.getElementById('startdate');
+                                  const enddate = document.getElementById('enddate');
+                            
+                            
+                                  //get the index number in array
+                                  const indexstartdate = dates2.indexOf(startdate.value);
+                                  const indexenddate = dates2.indexOf(enddate.value);
+                            
+                                  //console.log(indexstartdate)
+                            
+                                  // slice the array(pie) only showing the selected section / slice 
+                                  const filterDate = dates2.slice(indexstartdate,indexenddate + 1);
+                            
+                                  //replace the labels in the chart
+                                  myChart.config.data.labels = filterDate;
+                            
+                            
+                                  //datapoints
+                                  const datapoints2 = [...datapoints];
+                                  const filterDatapoints = datapoints2.slice(indexstartdate,indexenddate + 1);
+                                  myChart.config.data.datasets[0].data = filterDatapoints;
+                            
+                                  myChart.update();
+                            
+                            
+                                }
+
+
+
+                                ////////////user Details////////////////////////
+                                const tabledata = document.getElementById('tablelayout');
+                                fetch('http://165.232.181.217:8000/GetAllUsers').then((data) =>{
+                                    console.log("data",data)
+                                    return data.json();
+                                }).then((completedata)=>{
+                                    console.log("completedValue0",completedata);
+                                    completedata.map((e)=>{
+                                        const tableRow = document.createElement("tr");
+                                        tableRow.style.borderBottom = "1px solid black";
+                                        const checkBox = document.createElement("input");
+                                        checkBox.type = "checkbox";
+                                        const data5 = document.createElement("td");
+                                        const data6 = document.createElement("td");
+                                        //const data7 = document.createElement("td");
+                                        const data8 = document.createElement("td");
+                                        const data9 = document.createElement("td");
+
+                                        data5.innerHTML = ` ${e[3]}`;
+                                        data6.innerText = e[1];
+                                        //data7.innerText = e[2];
+                                        data8.innerText = e[4];
+                                        data9.innerHTML = `<div style="height : 15px; width : 15px; border-radius:7.5px;  margin-top : 2px"><div style="height:10px; width:10px;  border-radius : 5px; margin : 1.5px; background : green;margin-top:5px"></div></div> ${"Active"}`;
+                                        data9.style.display = "flex";
+                                        const viewButton = document.createElement("td");
+                                        viewButton.innerHTML = `<a href="graph"><button type="button" data-modal-toggle="user-modal" class="text-white bg-cyan-600 hover:bg-cyan-700 focus:ring-4 focus:ring-cyan-200 font-medium rounded-lg text-sm inline-flex items-center px-3 py-2 text-center"">
+                                                                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-eye" viewBox="0 0 16 16">
+                                                                    <path d="M16 8s-3-5.5-8-5.5S0 8 0 8s3 5.5 8 5.5S16 8 16 8zM1.173 8a13.133 13.133 0 0 1 1.66-2.043C4.12 4.668 5.88 3.5 8 3.5c2.12 0 3.879 1.168 5.168 2.457A13.133 13.133 0 0 1 14.828 8c-.058.087-.122.183-.195.288-.335.48-.83 1.12-1.465 1.755C11.879 11.332 10.119 12.5 8 12.5c-2.12 0-3.879-1.168-5.168-2.457A13.134 13.134 0 0 1 1.172 8z"/>
+                                                                    <path d="M8 5.5a2.5 2.5 0 1 0 0 5 2.5 2.5 0 0 0 0-5zM4.5 8a3.5 3.5 0 1 1 7 0 3.5 3.5 0 0 1-7 0z"/>
+                                                                </svg>
+                                                            ${"View Data"}
+                                                            </button></a>`;
+                                        const editButton = document.createElement("td");
+                                        editButton.innerHTML = ``;
+                                        const deleteButton = document.createElement("td");
+                                        deleteButton.innerHTML =  ``;
+                                        tableRow.append(data5,data6,data8,data9,viewButton,editButton,deleteButton);
+                                        tabledata.append(tableRow);
+                                        console.log(tableRow);
+
+                                    })
+                                    console.log("completedValue1",completedata[1]);
+                                })
+                                function graph(){
+                                    window.location="/graph"
+                                }
+
+
+                                function adduser(){
+                                    window.location="/registeruser"
+                                }
+
+
+                                //function onedit(){
+                                // window.location="/registeruser"
+                                //}
+                            
+                            
+                            
+                              </script>
+
+
+
+
+                              
+                           
+                        </div>
+                    </div>
+                </div>
+            </main>
+        </div>
+    </div>
+    <footer class="bg-white md:flex md:items-center md:justify-between shadow rounded-lg p-4 md:p-6 xl:p-8 my-6 mx-4">
+            <ul class="flex items-center flex-wrap mb-6 md:mb-0">
+                <li><a href="#" class="text-sm font-normal text-gray-500 hover:underline mr-4 md:mr-6">Terms and conditions</a></li>
+                <li><a href="#" class="text-sm font-normal text-gray-500 hover:underline mr-4 md:mr-6">Privacy Policy</a></li>
+                <li><a href="#" class="text-sm font-normal text-gray-500 hover:underline mr-4 md:mr-6">Licensing</a></li>
+                <li><a href="#" class="text-sm font-normal text-gray-500 hover:underline mr-4 md:mr-6">Cookie Policy</a></li>
+                <li><a href="#" class="text-sm font-normal text-gray-500 hover:underline">Contact</a></li>
+            </ul>
+            <div class="flex sm:justify-center space-x-6">
+                <a href="#" class="text-gray-500 hover:text-gray-900">
+                    <svg class="h-5 w-5" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                        <path fill-rule="evenodd" d="M22 12c0-5.523-4.477-10-10-10S2 6.477 2 12c0 4.991 3.657 9.128 8.438 9.878v-6.987h-2.54V12h2.54V9.797c0-2.506 1.492-3.89 3.777-3.89 1.094 0 2.238.195 2.238.195v2.46h-1.26c-1.243 0-1.63.771-1.63 1.562V12h2.773l-.443 2.89h-2.33v6.988C18.343 21.128 22 16.991 22 12z" clip-rule="evenodd" />
+                    </svg>
+                </a>
+                <a href="#" class="text-gray-500 hover:text-gray-900">
+                    <svg class="h-5 w-5" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                        <path fill-rule="evenodd" d="M12.315 2c2.43 0 2.784.013 3.808.06 1.064.049 1.791.218 2.427.465a4.902 4.902 0 011.772 1.153 4.902 4.902 0 011.153 1.772c.247.636.416 1.363.465 2.427.048 1.067.06 1.407.06 4.123v.08c0 2.643-.012 2.987-.06 4.043-.049 1.064-.218 1.791-.465 2.427a4.902 4.902 0 01-1.153 1.772 4.902 4.902 0 01-1.772 1.153c-.636.247-1.363.416-2.427.465-1.067.048-1.407.06-4.123.06h-.08c-2.643 0-2.987-.012-4.043-.06-1.064-.049-1.791-.218-2.427-.465a4.902 4.902 0 01-1.772-1.153 4.902 4.902 0 01-1.153-1.772c-.247-.636-.416-1.363-.465-2.427-.047-1.024-.06-1.379-.06-3.808v-.63c0-2.43.013-2.784.06-3.808.049-1.064.218-1.791.465-2.427a4.902 4.902 0 011.153-1.772A4.902 4.902 0 015.45 2.525c.636-.247 1.363-.416 2.427-.465C8.901 2.013 9.256 2 11.685 2h.63zm-.081 1.802h-.468c-2.456 0-2.784.011-3.807.058-.975.045-1.504.207-1.857.344-.467.182-.8.398-1.15.748-.35.35-.566.683-.748 1.15-.137.353-.3.882-.344 1.857-.047 1.023-.058 1.351-.058 3.807v.468c0 2.456.011 2.784.058 3.807.045.975.207 1.504.344 1.857.182.466.399.8.748 1.15.35.35.683.566 1.15.748.353.137.882.3 1.857.344 1.054.048 1.37.058 4.041.058h.08c2.597 0 2.917-.01 3.96-.058.976-.045 1.505-.207 1.858-.344.466-.182.8-.398 1.15-.748.35-.35.566-.683.748-1.15.137-.353.3-.882.344-1.857.048-1.055.058-1.37.058-4.041v-.08c0-2.597-.01-2.917-.058-3.96-.045-.976-.207-1.505-.344-1.858a3.097 3.097 0 00-.748-1.15 3.098 3.098 0 00-1.15-.748c-.353-.137-.882-.3-1.857-.344-1.023-.047-1.351-.058-3.807-.058zM12 6.865a5.135 5.135 0 110 10.27 5.135 5.135 0 010-10.27zm0 1.802a3.333 3.333 0 100 6.666 3.333 3.333 0 000-6.666zm5.338-3.205a1.2 1.2 0 110 2.4 1.2 1.2 0 010-2.4z" clip-rule="evenodd" />
+                    </svg>
+                </a>
+                <a href="#" class="text-gray-500 hover:text-gray-900">
+                    <svg class="h-5 w-5" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                        <path d="M8.29 20.251c7.547 0 11.675-6.253 11.675-11.675 0-.178 0-.355-.012-.53A8.348 8.348 0 0022 5.92a8.19 8.19 0 01-2.357.646 4.118 4.118 0 001.804-2.27 8.224 8.224 0 01-2.605.996 4.107 4.107 0 00-6.993 3.743 11.65 11.65 0 01-8.457-4.287 4.106 4.106 0 001.27 5.477A4.072 4.072 0 012.8 9.713v.052a4.105 4.105 0 003.292 4.022 4.095 4.095 0 01-1.853.07 4.108 4.108 0 003.834 2.85A8.233 8.233 0 012 18.407a11.616 11.616 0 006.29 1.84" />
+                    </svg>
+                </a>
+                <a href="#" class="text-gray-500 hover:text-gray-900">
+                    <svg class="h-5 w-5" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                        <path fill-rule="evenodd" d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.531 1.032 1.531 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0022 12.017C22 6.484 17.522 2 12 2z" clip-rule="evenodd" />
+                    </svg>
+                </a>
+                <a href="#" class="text-gray-500 hover:text-gray-900">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-linkedin" viewBox="0 0 16 16">
+                        <path d="M0 1.146C0 .513.526 0 1.175 0h13.65C15.474 0 16 .513 16 1.146v13.708c0 .633-.526 1.146-1.175 1.146H1.175C.526 16 0 15.487 0 14.854V1.146zm4.943 12.248V6.169H2.542v7.225h2.401zm-1.2-8.212c.837 0 1.358-.554 1.358-1.248-.015-.709-.52-1.248-1.342-1.248-.822 0-1.359.54-1.359 1.248 0 .694.521 1.248 1.327 1.248h.016zm4.908 8.212V9.359c0-.216.016-.432.08-.586.173-.431.568-.878 1.232-.878.869 0 1.216.662 1.216 1.634v3.865h2.401V9.25c0-2.22-1.184-3.252-2.764-3.252-1.274 0-1.845.7-2.165 1.193v.025h-.016a5.54 5.54 0 0 1 .016-.025V6.169h-2.4c.03.678 0 7.225 0 7.225h2.4z"/>
+                    </svg>
+                </a>
+            </div>
+        </footer>
+
+    <script src="https://demo.themesberg.com/windster/app.bundle.js"></script>
+</body>
+
+</html>
