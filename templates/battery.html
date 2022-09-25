@@ -60,6 +60,105 @@
             transform:translateY(-50px);
             
         }
+
+        .button,.sure-button,.cancel-button{
+            background: #ffffff;
+            padding: 10px 15px;
+            color: #34495e;
+            font-weight: bolder;
+            text-transform: uppercase;
+            font-size: 18px;
+            border-radius: 5px;
+            box-shadow: 6px 6px 29px -4px rgba(0,0,0,0.75);
+            margin-top: 25px;
+            text-decoration: none;
+            transition: 0.4s;
+        }
+        .sure-button {
+            margin-right: 20px;
+            background-color: red;
+            color : white;
+        }
+        .button:hover,.sure-button:hover,.cancel-button:hover{
+            cursor: pointer;
+            background-color: #34495e;
+            color: #fff;
+        }
+        .popup{
+            /* background: rgba(0, 0, 0, 0.6); */
+            width: 100%;
+            height: 120%;
+            position: absolute;
+            display: none;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            margin-top: -600px;
+            padding-left : 260px;
+        }
+        .popup-delete {
+            width: 100%;
+            height: 120%;
+            position: absolute;
+            display: none;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            margin-top: -600px;
+            padding-left : 260px;
+        }
+        .popup-content{
+            height: 350px;
+            width: 500px;
+            background: rgb(115, 97, 97);
+            padding: 20px;
+            border-radius: 5px;
+            position: relative;
+        }
+        .popup-content-delete {
+            height: 350px;
+            width: 500px;
+            background: rgb(230, 222, 222);
+            padding: 20px;
+            border-radius: 5px;
+            position: relative;
+            display : flex;
+            flex-direction: column;
+        }
+        input{
+            margin: 20px auto;
+            display: block;
+            width: 50%;
+            padding: 8px;
+            border: 1px solid gray;
+        }
+        .close{
+            position: absolute;
+            top: -0px;
+            right: -0px;
+            background: #fff;
+            height: 25px;
+            width: 25px;
+            border-radius: 50%;
+            box-shadow: 6px 6px 29px -4px rgba(0,0,0,0.75);
+            cursor: pointer;
+
+        }
+        .close-delete {
+            position: absolute;
+            top: -0px;
+            right: -0px;
+            background: #fff;
+            height: 25px;
+            width: 25px;
+            border-radius: 50%;
+            box-shadow: 6px 6px 29px -4px rgba(0,0,0,0.75);
+            cursor: pointer;
+        }
+        .delete-button-flex {
+            display : flex;
+            flex-direction: row;
+        }
     </style>
 </head>
 
@@ -157,7 +256,7 @@
                     <nav class="flex mb-5" aria-label="Breadcrumb" id="home">
                         <ol class="inline-flex items-center space-x-1 md:space-x-2">
                         <li class="inline-flex items-center">
-                        <a href="#" class="text-gray-700 hover:text-gray-900 inline-flex items-center">
+                        <a href="/dashboard" class="text-gray-700 hover:text-gray-900 inline-flex items-center">
                         <svg class="w-5 h-5 mr-2.5" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path d="M10.707 2.293a1 1 0 00-1.414 0l-7 7a1 1 0 001.414 1.414L4 10.414V17a1 1 0 001 1h2a1 1 0 001-1v-2a1 1 0 011-1h2a1 1 0 011 1v2a1 1 0 001 1h2a1 1 0 001-1v-6.586l.293.293a1 1 0 001.414-1.414l-7-7z"></path></svg>
                         Home
                         </a>
@@ -202,15 +301,6 @@
                             </li>
                         </ol>
                     </nav>-->
-
-
-
-
-
-
-
-
-
                     <div class="sm:flex" id="addbtnuse">
                         <div class="hidden sm:flex items-center sm:divide-x sm:divide-gray-100 mb-3 sm:mb-0">
                             <form class="lg:pr-3" action="#" method="GET">
@@ -247,16 +337,6 @@
                         </div>
                         </div>
                     </div>
-
-
-
-
-
-
-
-
-
-
                     <table style="width: 85%;margin-left: 10px; margin-top:100px" id="tablelayout">
                     <thead class="bg-gray-100" id="tabledataTD">
                         <tr>
@@ -273,16 +353,6 @@
                     </thead>
 
                     </table>
-                
-
-
-
-
-
-
-
-
-
                     <!--<h3 class="mt-8 pt-6 px-4 text-center text-4xl sm:text-5xl ml-5">
                         Coming Soon
                     </h3>-->
@@ -405,13 +475,51 @@
             </div>
         </aside>
     </div>
-    
+    <div class="popup-delete">
+        <div class="popup-content-delete">
+            <img src="https://png.pngtree.com/png-vector/20190603/ourmid/pngtree-icon-close-button-png-image_1357822.jpg" alt="Close" class="close-delete">
+            <svg class="w-20 h-20 text-red-600 mx-auto" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4m0 4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
+            <h3 class="text-xl font-normal text-gray-500 mt-5 mb-6">Are you sure you want to delete this user?</h3>
+            <div class="delete-button-flex">
+                <button class="sure-button">Yes, I'm sure</button>
+                <button class="cancel-button">No cancel</button>
+            </div>
+        </div>
 
+    </div>
+    <div class="popup">
+        <div class="popup-content">
+            <img src="https://png.pngtree.com/png-vector/20190603/ourmid/pngtree-icon-close-button-png-image_1357822.jpg" alt="Close" class="close">
+            <input type="text" placeholder="company">
+            <input type="text" placeholder="UUID">
+            <input type="password" placeholder="Password">
+            <input type="text" placeholder="MACID">
+            <a href="#" class="button" id="updated-buttons">Update</a>
+        </div>
+
+    </div>
 
     
 </body>
 </html>
 <script>
+    document.querySelector(".close").addEventListener("click", function(){
+        document.querySelector(".popup").style.display = "none";
+    })
+    document.querySelector(".close-delete").addEventListener("click", function(){
+        document.querySelector(".popup-delete").style.display = "none";
+    })
+    document.querySelector(".cancel-button").addEventListener("click", function(){
+        document.querySelector(".popup-delete").style.display = "none";
+    })
+    document.querySelector(".sure-button").addEventListener("click", function(){
+        alert("The User Successfully Deleted from the Database ........");
+        document.querySelector(".popup-delete").style.display = "none";
+    })
+    document.querySelector("#updated-buttons").addEventListener("click", function(){
+        alert("The User Successfully Updated into the database ........");
+        document.querySelector(".popup").style.display = "none";
+    })
     const tabledata = document.getElementById('tablelayout');
     fetch('http://165.232.181.217:8000/GetAllUsers').then((data) =>{
         console.log("data",data)
@@ -448,11 +556,17 @@
                                     <svg class="mr-2 h-5 w-5" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path d="M17.414 2.586a2 2 0 00-2.828 0L7 10.172V13h2.828l7.586-7.586a2 2 0 000-2.828z"></path><path fill-rule="evenodd" d="M2 6a2 2 0 012-2h4a1 1 0 010 2H4v10h10v-4a1 1 0 112 0v4a2 2 0 01-2 2H4a2 2 0 01-2-2V6z" clip-rule="evenodd"></path></svg>
                                 ${"Edit user"}
                                 </button>`;
+            editButton.addEventListener("click",function(){
+                document.querySelector(".popup").style.display = "flex";
+            })
             const deleteButton = document.createElement("td");
             deleteButton.innerHTML =  `<button type="button" data-modal-toggle="user-modal" class="text-white bg-red-600 hover:bg-red-800 focus:ring-4 focus:ring-red-300 font-medium rounded-lg text-sm inline-flex items-center px-3 py-2 text-center" >
                                         <svg class="mr-2 h-5 w-5" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M9 2a1 1 0 00-.894.553L7.382 4H4a1 1 0 000 2v10a2 2 0 002 2h8a2 2 0 002-2V6a1 1 0 100-2h-3.382l-.724-1.447A1 1 0 0011 2H9zM7 8a1 1 0 012 0v6a1 1 0 11-2 0V8zm5-1a1 1 0 00-1 1v6a1 1 0 102 0V8a1 1 0 00-1-1z" clip-rule="evenodd"></path></svg>
                                 ${"Delete user"}
                                 </button>`;
+            deleteButton.addEventListener("click",function(){
+                document.querySelector(".popup-delete").style.display = "flex";
+            })
             tableRow.append(data5,data6,data8,data9,viewButton,editButton,deleteButton);
             tabledata.append(tableRow);
             console.log(tableRow);
@@ -468,14 +582,4 @@
     function adduser(){
         window.location="/registeruser"
     }
-
-
-    
-
-
-
-
-
-
-
 </script>
