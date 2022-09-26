@@ -115,6 +115,14 @@
             margin-top: 100px;
             transform: translateY(-70px)
         }
+        #Active{
+            transform: translateY(10px);
+        }
+        #active{
+            transform: translateY(14px);
+
+
+        }
 
 
     </style>
@@ -963,7 +971,7 @@
                                         data6.innerText = e[1];
                                         //data7.innerText = e[2];
                                         data8.innerText = e[4];
-                                        data9.innerHTML = `<div style="height : 15px; width : 15px; border-radius:7.5px;  margin-top : 2px"><div style="height:10px; width:10px;  border-radius : 5px; margin : 1.5px; background : green;margin-top:5px"></div></div> ${"Active"}`;
+                                        data9.innerHTML = `<div style="height : 15px; width : 15px; border-radius:7.5px;  margin-top : 2px"><div id="active" style="height:10px; width:10px;  border-radius : 5px; margin : 1.5px; background : green;margin-top:5px"></div></div> <span id="Active">${"Active"}</span>`;
                                         data9.style.display = "flex";
                                         const viewButton = document.createElement("td");
                                         viewButton.innerHTML = `<a href="graph"><button type="button" data-modal-toggle="user-modal" class="text-white bg-cyan-600 hover:bg-cyan-700 focus:ring-4 focus:ring-cyan-200 font-medium rounded-lg text-sm inline-flex items-center px-3 py-2 text-center"">

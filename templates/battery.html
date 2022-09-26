@@ -42,7 +42,7 @@
             margin-left: -605px;
         }
         #home{
-            margin-top: -70px;
+            margin-top: -110px;
         }
         #Company{
             transform: translateX(10px);
@@ -61,29 +61,53 @@
             
         }
 
-        .button,.sure-button,.cancel-button{
-            background: #ffffff;
+        .button,.sure-button{
+            background: rgb(70,146,178);
             padding: 10px 15px;
-            color: #34495e;
+            color: white;
             font-weight: bolder;
             text-transform: uppercase;
             font-size: 18px;
             border-radius: 5px;
-            box-shadow: 6px 6px 29px -4px rgba(0,0,0,0.75);
             margin-top: 25px;
             text-decoration: none;
             transition: 0.4s;
+        }
+        .cancel-button{
+            background-color: #ffffff;
+            padding: 10px 15px;
+            color: white;
+            font-weight: bolder;
+            text-transform: uppercase;
+            font-size: 18px;
+            border-radius: 5px;
+            margin-top: 25px;
+            text-decoration: none;
+            transition: 0.4s;
+            color: black;
         }
         .sure-button {
             margin-right: 20px;
             background-color: red;
             color : white;
+            margin-left: 70px;
         }
-        .button:hover,.sure-button:hover,.cancel-button:hover{
+        .button:hover{
             cursor: pointer;
-            background-color: #34495e;
+            background-color: rgb(5, 58, 81);
             color: #fff;
         }
+        .sure-button:hover{
+            background-color: rgb(125, 3, 3);
+            color: white;
+        }
+        .cancel-button:hover{
+            background-color: rgb(138, 135, 135);
+            color: rgb(0,0,0);
+            cursor: pointer;
+        }
+
+
         .popup{
             /* background: rgba(0, 0, 0, 0.6); */
             width: 100%;
@@ -93,8 +117,8 @@
             justify-content: center;
             align-items: center;
             text-align: center;
-            margin-top: -600px;
-            padding-left : 260px;
+            margin-top: -1050px;
+            padding-left : 200px;
         }
         .popup-delete {
             width: 100%;
@@ -104,16 +128,17 @@
             justify-content: center;
             align-items: center;
             text-align: center;
-            margin-top: -600px;
-            padding-left : 260px;
+            margin-top: -1050px;
+            padding-left : 200px;
         }
         .popup-content{
             height: 350px;
             width: 500px;
-            background: rgb(115, 97, 97);
+            background: #ffffff;
             padding: 20px;
             border-radius: 5px;
             position: relative;
+            box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
         }
         .popup-content-delete {
             height: 350px;
@@ -159,11 +184,29 @@
             display : flex;
             flex-direction: row;
         }
+        #Active{
+            transform: translateY(20px);
+        }
+        #nav-bar{
+            height: 70px
+        }
+        #Ten-cels{
+            margin-top: -50px;
+        }
+        #se-ch{
+            margin-top:-15px
+        }
+        footer{
+            width:85%;
+            transform: translateX(250px);
+            height: 50px
+        }
+
     </style>
 </head>
 
 <body class="bg-gray-50">
-    <nav class="bg-white border-b border-gray-200 fixed z-30 w-full">
+    <nav class="bg-white border-b border-gray-200 fixed z-30 w-full" id="nav-bar">
         <div class="px-3 py-3 lg:px-5 lg:pl-3">
             <div class="flex items-center justify-between">
                 <div class="flex items-center justify-start">
@@ -182,11 +225,11 @@
                                 clip-rule="evenodd"></path>
                         </svg>
                     </button>
-                    <a href="/" class="text-xl font-bold flex items-center lg:ml-2.5">
+                    <a href="/" class="text-xl font-bold flex items-center lg:ml-2.5" id="Ten-cels">
                         <img src="/static/favicon.png" class="h-6 mr-2" alt="Windster Logo">
                         <span class="self-center whitespace-nowrap">Tentacels</span>
                     </a>
-                    <form action="#" method="GET" class="hidden lg:block lg:pl-32">
+                    <form action="#" method="GET" class="hidden lg:block lg:pl-32" id="se-ch">
                         <label for="topbar-search" class="sr-only">Search</label>
                         <div class="mt-1 relative lg:w-64">
                             <div class="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none">
@@ -499,6 +542,35 @@
 
     </div>
 
+
+
+
+    <footer class="bg-white md:flex md:items-center md:justify-between shadow rounded-lg p-4 md:p-6 xl:p-8 my-6 mx-4">
+        <div class="bg-white sticky sm:flex items-center w-full sm:justify-between bottom-0 right-0 border-t border-gray-200 p-4">
+            <div class="flex items-center mb-4 sm:mb-0">
+                <a href="#" class="text-gray-500 hover:text-gray-900 cursor-pointer p-1 hover:bg-gray-100 rounded inline-flex justify-center">
+                    <svg class="w-7 h-7" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M12.707 5.293a1 1 0 010 1.414L9.414 10l3.293 3.293a1 1 0 01-1.414 1.414l-4-4a1 1 0 010-1.414l4-4a1 1 0 011.414 0z" clip-rule="evenodd"></path></svg>
+                </a>
+                <a href="#" class="text-gray-500 hover:text-gray-900 cursor-pointer p-1 hover:bg-gray-100 rounded inline-flex justify-center mr-2">
+                    <svg class="w-7 h-7" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M7.293 14.707a1 1 0 010-1.414L10.586 10 7.293 6.707a1 1 0 011.414-1.414l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414 0z" clip-rule="evenodd"></path></svg>
+                </a>
+                <span class="text-sm font-normal text-gray-500">Showing <span class="text-gray-900 font-semibold">1-20</span> of <span class="text-gray-900 font-semibold">2290</span></span>
+            </div>
+            <div class="flex items-center space-x-3">
+                <a href="/" class="flex-1 text-white bg-cyan-600 hover:bg-cyan-700 focus:ring-4 focus:ring-cyan-200 font-medium inline-flex items-center justify-center rounded-lg text-sm px-3 py-2 text-center">
+                    <svg class="-ml-1 mr-1 h-5 w-5" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M12.707 5.293a1 1 0 010 1.414L9.414 10l3.293 3.293a1 1 0 01-1.414 1.414l-4-4a1 1 0 010-1.414l4-4a1 1 0 011.414 0z" clip-rule="evenodd"></path></svg>
+                    Previous
+                 </a>
+                <a href="/" class="flex-1 text-white bg-cyan-600 hover:bg-cyan-700 focus:ring-4 focus:ring-cyan-200 font-medium inline-flex items-center justify-center rounded-lg text-sm px-3 py-2 text-center">
+                     Next
+                    <svg class="-mr-1 ml-1 h-5 w-5" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M7.293 14.707a1 1 0 010-1.414L10.586 10 7.293 6.707a1 1 0 011.414-1.414l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414 0z" clip-rule="evenodd"></path></svg>
+                 </a>
+            </div>
+        </div>
+
+
+    </footer>
+
     
 </body>
 </html>
@@ -541,7 +613,7 @@
             data6.innerText = e[1];
             //data7.innerText = e[2];
             data8.innerText = e[4];
-            data9.innerHTML = `<div style="height : 15px; width : 15px; border-radius:7.5px;  margin-top : 2px"><div style="height:10px; width:10px;  border-radius : 5px; margin : 1.5px; background : green;margin-top:5px"></div></div> ${"Active"}`;
+            data9.innerHTML = `<div style="height : 15px; width : 15px; border-radius:7.5px;  margin-top : 2px"><div id="Active" style="height:10px; width:10px;  border-radius : 5px; margin : 1.5px; background : green;margin-top:5px"></div></div><span id="active">${"Active"}</span>`;
             data9.style.display = "flex";
             const viewButton = document.createElement("td");
             viewButton.innerHTML = `<a href="graph"><button type="button" data-modal-toggle="user-modal" class="text-white bg-cyan-600 hover:bg-cyan-700 focus:ring-4 focus:ring-cyan-200 font-medium rounded-lg text-sm inline-flex items-center px-3 py-2 text-center"">
