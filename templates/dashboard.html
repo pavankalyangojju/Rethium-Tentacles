@@ -45,7 +45,7 @@
             display: flex;
             align-items: center;
             justify-content: center;
-            margin-top: -200px;
+            margin-top: 50px;
             transform: translateY(230px);
             margin-left: -850px
 
@@ -120,8 +120,9 @@
         }
         #active{
             transform: translateY(14px);
-
-
+        }
+        tr{
+            box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
         }
 
 
@@ -958,7 +959,7 @@
                                     console.log("completedValue0",completedata);
                                     completedata.map((e)=>{
                                         const tableRow = document.createElement("tr");
-                                        tableRow.style.borderBottom = "1px solid black";
+                                        //tableRow.style.borderBottom = "1px solid black";
                                         const checkBox = document.createElement("input");
                                         checkBox.type = "checkbox";
                                         const data5 = document.createElement("td");

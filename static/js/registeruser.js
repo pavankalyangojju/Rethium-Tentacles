@@ -10,8 +10,8 @@ var GetAllUsers = function () {
             // for key value in json console key value
             Object.keys(jsondata).forEach(function (key) {
                 document.getElementById('userlist').appendChild(GetTemplate(key));
-                document.getElementsByClassName("uuidvalue")[key - 1].innerHTML = jsondata[key].uuid;
-                document.getElementsByClassName("companyname")[key - 1].innerHTML = jsondata[key].company;
+                document.getElementsByClassName("uuidvalue")[key - 1].innerHTML = jsondata[key].company;
+                document.getElementsByClassName("companyname")[key - 1].innerHTML = jsondata[key].password;
                 document.getElementsByClassName("macidvalues")[key - 1].innerHTML = jsondata[key].macid;
             });
         }
