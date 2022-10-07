@@ -6,9 +6,9 @@ var DashboardStat = function (StatId) {
         document.getElementById(StatId).innerHTML = "15";
     }
     else if (StatId == "NoOfCompanies") {
-        document.getElementById(StatId).innerHTML = "15";
+        document.getElementById(StatId).innerHTML = "";
         let xhr = new XMLHttpRequest();
-        xhr.open('GET', 'http://165.232.181.217:8000/GetAllCompanies')
+        xhr.open('GET', 'http://localhost:3001/UserData')
         xhr.setRequestHeader('Content-Type', 'application/json');
         xhr.setRequestHeader('Access-Control-Allow-Origin', '*');
         xhr.send();

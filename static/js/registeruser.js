@@ -18,6 +18,31 @@ var GetAllUsers = function () {
     }
 }
 
+let postData = () => {
+    const company = document.getElementById("company").value;
+    const uuid = document.getElementById("uuid").value;
+    const password = document.getElementById("password").value;
+    const macid = document.getElementById("macid1").value + ":" + document.getElementById("macid2").value+":"+document.getElementById("macid3").value+":"+document.getElementById("macid4").value+":"+document.getElementById("macid5").value+":"+document.getElementById("macid6").value;
+    console.log("company",company,uuid,password,macid);
+    fetch("http://localhost:3001/UserData", {
+        method: "POST",
+        body: JSON.stringify({
+            company: company,
+            uuid: uuid,
+            password:password,
+            macid:macid
+        }),
+        headers: {
+            "Content-type": "application/json; charset=UTF-8"
+        }
+    })
+    .then(response => response.json())
+    .then(data =>{ 
+        console.log(data);
+        window.location.reload();
+    });
+}
+
 var GetTemplate = function (id) {
     let template = document.getElementsByTagName('template')[0];
     let clone = template.content.cloneNode(true);
@@ -49,7 +74,7 @@ var deleteuser = function (node) {
 
 }
 var viewgraph = function (node) {
-    let id=node.id
+    let id = node.id
     console.log(id);
 }
 

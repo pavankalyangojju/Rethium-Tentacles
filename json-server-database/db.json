@@ -1,0 +1,25 @@
+{
+  "UserData": [
+    {
+      "company": "fwad",
+      "uuid": "rethium@123",
+      "password": "fwad@123",
+      "macid": "01:03:02:04:09:10",
+      "id": 3
+    },
+    {
+      "company": "facebook",
+      "uuid": "rethium",
+      "password": "facebook@123",
+      "macid": "02:04:020:01:03:01",
+      "id": 4
+    },
+    {
+      "company": "flying",
+      "uuid": "rethium",
+      "password": "rethium@123",
+      "macid": "11:12:13:11:11:12",
+      "id": 5
+    }
+  ]
+}

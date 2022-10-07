@@ -271,7 +271,7 @@
                                 <div class="bg-white rounded-lg shadow relative">
                                     <!-- Modal header -->
                                     <div class="flex items-start justify-between p-5 border-b rounded-t">
-                                        <h3 class="text-xl font-semibold">
+                                        <h3 class="text-xl font-semibold" onclick="postData()">
                                             Add New User
                                         </h3>
                                     </div>
@@ -283,7 +283,7 @@
                                                 <div class="col-span-6 sm:col-span-3">
                                                     <label for="company"
                                                         class="text-sm font-medium text-gray-900 block mb-2">Company</label>
-                                                    <input name="company" id=""
+                                                    <input name="company" id="company"
                                                         class="shadow-sm bg-gray-50 border border-gray-300 text-gray-900 sm:text-sm rounded-lg focus:ring-cyan-600 focus:border-cyan-600 block w-full p-2.5"
                                                         required>
                                                     </input>
@@ -306,27 +306,27 @@
                                                     <label for="macid"
                                                         class="text-sm font-medium text-gray-900 block mb-2">MacID</label>
                                                     <div class="flex flex-row items-center">
-                                                        <input type="text" name="macid" id="macid"
+                                                        <input type="text" name="macid" id="macid1"
                                                             class="mx-1 shadow-sm bg-gray-50 border border-gray-300 text-gray-900 sm:text-sm rounded-lg focus:ring-cyan-600 focus:border-cyan-600 block w-full p-2.5"
                                                             placeholder="00" required>
                                                         <p class="p-1 text-gray-500">:</p>
-                                                        <input type="text" name="macid" id="macid"
+                                                        <input type="text" name="macid" id="macid2"
                                                             class="mx-1 shadow-sm bg-gray-50 border border-gray-300 text-gray-900 sm:text-sm rounded-lg focus:ring-cyan-600 focus:border-cyan-600 block w-full p-2.5"
                                                             placeholder="00" required>
                                                             <p class="p-1 text-gray-500">:</p>
-                                                        <input type="text" name="macid" id="macid"
+                                                        <input type="text" name="macid" id="macid3"
                                                             class="mx-1 shadow-sm bg-gray-50 border border-gray-300 text-gray-900 sm:text-sm rounded-lg focus:ring-cyan-600 focus:border-cyan-600 block w-full p-2.5"
                                                             placeholder="00" required>
                                                             <p class="p-1 text-gray-500">:</p>
-                                                        <input type="text" name="macid" id="macid"
+                                                        <input type="text" name="macid" id="macid4"
                                                             class="mx-1 shadow-sm bg-gray-50 border border-gray-300 text-gray-900 sm:text-sm rounded-lg focus:ring-cyan-600 focus:border-cyan-600 block w-full p-2.5"
                                                             placeholder="00" required>
                                                             <p class="p-1 text-gray-500">:</p>
-                                                        <input type="text" name="macid" id="macid"
+                                                        <input type="text" name="macid" id="macid5"
                                                             class="mx-1 shadow-sm bg-gray-50 border border-gray-300 text-gray-900 sm:text-sm rounded-lg focus:ring-cyan-600 focus:border-cyan-600 block w-full p-2.5"
                                                             placeholder="00" required>
                                                             <p class="p-1 text-gray-500">:</p>
-                                                        <input type="text" name="macid" id="macid"
+                                                        <input type="text" name="macid" id="macid6"
                                                             class="mx-1 shadow-sm bg-gray-50 border border-gray-300 text-gray-900 sm:text-sm rounded-lg focus:ring-cyan-600 focus:border-cyan-600 block w-full p-2.5"
                                                             placeholder="00" required>
                                                     </div>
@@ -338,21 +338,21 @@
                                     <div class="items-center p-6 border-t border-gray-200 rounded-b">
                                         <button
                                             class="text-white bg-cyan-600 hover:bg-cyan-700 focus:ring-4 focus:ring-cyan-200 font-medium rounded-lg text-sm px-5 py-2.5 text-center"
-                                            type="submit" onclick="window.location.href = '/registeruser';">Add
+                                            type="submit" onclick="postData()">Add
                                             user</button>
                                     </div>
                                     </form>
                                 </div>
                                 <!-- Add Company Modal -->
-                                <div class="bg-white rounded-lg shadow relative mt-4">
-                                    <!-- Modal header -->
+                                <!--<div class="bg-white rounded-lg shadow relative mt-4">
+                                    Modal header 
                                     <div class="flex items-start justify-between p-5 border-b rounded-t">
                                         <h3 class="text-xl font-semibold">
                                             List Of Companys
                                         </h3>
                                     </div>
-                                    <!-- Modal body hello id id missing companylist299 -->
-                                    <!--<div class="p-6 space-y-6">
+                                    Modal body hello id id missing companylist299
+                                    <div class="p-6 space-y-6">
                                         <form action="http://165.232.181.217:8000/RegisterCompany" method="get"
                                             target="_blank">
                                             <div class="bg-white w-screen overflow-auto whitespace-no-wrap py-3"
@@ -369,28 +369,28 @@
 
                                                 </div>
                                             </div>
-                                    </div>-->
+                                    </div>
 
 
-                                    <!--add a companys and delete a companys-->
+                                    add a companys and delete a companys
                                     <form action="" style="display:flex">
-                                        <!--<select name="" id="myslt">
+                                        <select name="" id="myslt">
                                             <option value="">Select Company </option>
-                                        </select>-->
+                                        </select>
                                         <input type="text" id="text" class="shadow-sm bg-gray-50 border border-gray-300 text-gray-900 sm:text-sm rounded-lg focus:ring-cyan-600 focus:border-cyan-600 block w-1/2 p-2.5">
                                         <button type="button" id="addBtn" class="text-white bg-cyan-600 hover:bg-cyan-700 focus:ring-4 focus:ring-cyan-200 font-medium rounded-lg text-sm px-5 py-2.5 text-center ml-1" class="add-btn-comp" onclick="ADDC()">Add Companies</button>
                                         <button type="button" id="removeBtn" class="text-white bg-red-700 hover:bg-red-800 focus:ring-4 focus:ring-red-300 font-medium rounded-lg text-sm inline-flex items-center px-3 py-2 text-center ml-1">Delete Company</button>
-                                    </form> 
+                                    </form>
 
-                                    <!-- Modal footer -->
-                                    <!--<div class="items-center p-6 border-t border-gray-200 rounded-b">
+                                    Modal footer
+                                    <div class="items-center p-6 border-t border-gray-200 rounded-b">
                                         <button
                                             class="text-white bg-cyan-600 hover:bg-cyan-700 focus:ring-4 focus:ring-cyan-200 font-medium rounded-lg text-sm px-5 py-2.5 text-center"
                                             type="submit" onclick="window.location.href = '/registeruser';">Add
                                             compnay</button>
-                                    </div>-->
+                                    </div>
                                     </form>
-                                </div>
+                                </div>-->
                             </div>
                         </div>
 
@@ -485,12 +485,12 @@
 
 
     const tabledata = document.getElementById('tablelayout');
-    fetch('http://165.232.181.217:8000/GetAllUsers').then((data) =>{
+    fetch('http://localhost:3001/UserData').then((data) =>{
         console.log("data",data)
         return data.json();
     }).then((completedata)=>{
         console.log("completedValue0",completedata);
-        completedata.map((e)=>{
+        completedata.map(({company,uuid,macid})=>{
             const tableRow = document.createElement("tr");
             //tableRow.style.borderBottom = "1px solid #E5E7EB";
             //const checkBox = document.createElement("input");
@@ -501,10 +501,10 @@
             const data8 = document.createElement("td");
             const data9 = document.createElement("td");
 
-            data5.innerHTML = `${e[3]}`;
-            data6.innerText = e[1];
+            data5.innerHTML = company;
+            data6.innerText = uuid;
             //data7.innerText = e[2];
-            data8.innerText = e[4];
+            data8.innerText = macid;
             //data9.innerHTML = ``;
             data9.style.display = "flex";
             const viewButton = document.createElement("td");
