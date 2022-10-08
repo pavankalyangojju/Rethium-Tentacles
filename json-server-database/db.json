@@ -20,6 +20,13 @@
       "password": "rethium@123",
       "macid": "11:12:13:11:11:12",
       "id": 5
+    },
+    {
+      "company": "Toyota",
+      "uuid": "rethium",
+      "password": "rethium@123",
+      "macid": "01:01:01:01:02:01",
+      "id": 6
     }
   ]
 }
