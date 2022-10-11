@@ -633,8 +633,7 @@
                 console.log("companyEditButton",id)
                 document.querySelector(".popup").style.display = "flex";
                 let btn = document.getElementById("updated-buttons");
-                btn.onclick =function() { editUser(id)}
-
+                btn.onclick =function() { editUser(id) }
             })
             const deleteButton = document.createElement("td");
             deleteButton.innerHTML =  `<button type="button" data-modal-toggle="user-modal" class="text-white bg-red-600 hover:bg-red-800 focus:ring-4 focus:ring-red-300 font-medium rounded-lg text-sm inline-flex items-center px-3 py-2 text-center" >
@@ -645,6 +644,7 @@
                 document.querySelector(".popup-delete").style.display = "flex";
                 let btn = document.getElementById("deleteUserButton");
                 btn.onclick = function() { deleteuser(id)}
+
             })
             tableRow.append(data5,data6,data8,data9,viewButton,editButton,deleteButton);
             tabledata.append(tableRow);

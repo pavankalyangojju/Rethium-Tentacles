@@ -485,12 +485,14 @@
 
 
     const tabledata = document.getElementById('tablelayout');
+    let deleteuserRegisterUser = (id) => {
+    fetch(`http://localhost:3001/UserData/${id}`, { method: 'DELETE' })
+    }
+
     fetch('http://localhost:3001/UserData').then((data) =>{
-        console.log("data",data)
         return data.json();
     }).then((completedata)=>{
-        console.log("completedValue0",completedata);
-        completedata.map(({company,uuid,macid})=>{
+        completedata.map(({id,company,uuid,macid})=>{
             const tableRow = document.createElement("tr");
             //tableRow.style.borderBottom = "1px solid #E5E7EB";
             //const checkBox = document.createElement("input");
@@ -511,57 +513,32 @@
             viewButton.innerHTML = `<a href="graph"><button type="button" data-modal-toggle="user-modal" class="text-white bg-cyan-600 hover:bg-cyan-700 focus:ring-4 focus:ring-cyan-200 font-medium rounded-lg text-sm inline-flex items-center px-3 py-2 text-center"">
                                 ${"View Graph"}
                                 </button></a>`;
-            //const editButton = document.createElement("td");
-            //editButton.addEventListener("click",function(){
-            //    document.querySelector(".popup").style.display = "flex";
-            //})
             const deleteButton = document.createElement("td");
-            deleteButton.innerHTML =  `<button type="button" data-modal-toggle="user-modal" class="text-white bg-cyan-600 hover:bg-cyan-800 focus:ring-4 focus:ring-cyan-300 font-medium rounded-lg text-sm inline-flex items-center px-3 py-2 text-center" >
+            deleteButton.innerHTML =  `<button id="deleteButtonClick" type="button" data-modal-toggle="user-modal" class="text-white bg-cyan-600 hover:bg-cyan-800 focus:ring-4 focus:ring-cyan-300 font-medium rounded-lg text-sm inline-flex items-center px-3 py-2 text-center" >
                                 ${"Delete user"}
                                 </button>`;
-            deleteButton.addEventListener("click",function(){
-                alert("Successfully delete data from database........");
-            })
+            deleteButton.onclick = function(){ deleteuserRegisterUser(id) }
             tableRow.append(data5,data6,data8,data9,deleteButton,viewButton);
             tabledata.append(tableRow);
-            console.log(tableRow);
 
         })
-        console.log("completedValue1",completedata[1]);
     })
 
+        // document.getElementById('addBtn').onclick = function(){
+        //     let myselect = document.getElementById('myselect')
+        //     let opation = document.createElement('option')
+        //     let textInput = document.getElementById('text')
 
 
+        //     opation.value = textInput.value
+        //     opation.text = textInput.value
+
+        //     myselect.add(opation)
+        //     textInput.value = ""
+        //     alert("CompanyName is Added Successfully");
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-        document.getElementById('addBtn').onclick = function(){
-            let myselect = document.getElementById('myselect')
-            let opation = document.createElement('option')
-            let textInput = document.getElementById('text')
-
-
-            opation.value = textInput.value
-            opation.text = textInput.value
-
-            myselect.add(opation)
-            textInput.value = ""
-            alert("CompanyName is Added Successfully");
-
-
-        }
+        // }
 
 
         ////////////////////////////////////////////////////////////////////////////
@@ -583,13 +560,13 @@
 
 
 
-        document.getElementById('removeBtn').onclick = function(){
-            let myselect = document.getElementById('myselect')
+        // document.getElementById('removeBtn').onclick = function(){
+        //     let myselect = document.getElementById('myselect')
 
-            myselect.remove(myselect.selectedIndex)
-            alert("CompanyName is Delete Successfully");
+        //     myselect.remove(myselect.selectedIndex)
+        //     alert("CompanyName is Delete Successfully");
 
-        }
+        // }
 
     </script>
     <script src="https://demo.themesberg.com/windster/app.bundle.js"></script>

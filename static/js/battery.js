@@ -11,12 +11,10 @@ var BatteryStat = function (StatusId) {
 }
 
 let editUser = (id) =>{
-    console.log("companyid",id);
     const companyEdit = document.getElementById("companypopup").value;
     const uuidEdit = document.getElementById("uuidpopup").value;
     const passwordEdit = document.getElementById("passwordpopup").value;
     const macidEdit = document.getElementById('macidpopup').value;
-    //console.log("companyEdit",companyEdit,uuidEdit,passwordEdit,macidEdit)
     if(companyEdit && uuidEdit && passwordEdit && macidEdit){
         fetch(`http://localhost:3001/UserData/${id}`, {
             method: "PATCH",
@@ -31,12 +29,8 @@ let editUser = (id) =>{
             }
         })
         .then(response => response.json())
-        .then(data =>{ 
-            console.log("companydata",data);
-        });
     }
 }
 let deleteuser = (id) =>{
-    console.log("companyDelete",id);
     fetch(`http://localhost:3001/UserData/${id}`, { method: 'DELETE' })
 }
