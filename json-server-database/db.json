@@ -1,25 +1,35 @@
 {
   "UserData": [
     {
-      "company": "Shopify",
-      "uuid": "rethium_shopify",
-      "password": "shopify@123",
-      "macid": "01:02:03:04:05:06",
-      "id": 3
-    },
-    {
-      "company": "facebook",
-      "uuid": "rethium",
-      "password": "facebook@123",
-      "macid": "02:04:020:01:03:01",
-      "id": 4
-    },
-    {
       "company": "Toyota",
       "uuid": "rethium",
       "password": "rethium@123",
       "macid": "01:01:01:01:02:01",
       "id": 6
+    },
+    {
+      "company": "HackerRank",
+      "uuid": "rethium",
+      "password": "hacker@123",
+      "macid": "01:02:03:04:05:06",
+      "id": 7
+    },
+    {
+      "company": "flying",
+      "uuid": "rethium",
+      "password": "rethium@123",
+      "macid": "11:11:12:22:11:13",
+      "id": 8
+    }
+  ],
+  "CompanyDetails": [
+    {
+      "company_name": "HackerRank",
+      "id": 1
+    },
+    {
+      "company_name": "flying",
+      "id": 2
     }
   ]
 }

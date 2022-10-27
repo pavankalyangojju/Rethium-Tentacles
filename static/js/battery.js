@@ -28,9 +28,19 @@ let editUser = (id) =>{
                 "Content-type": "application/json; charset=UTF-8"
             }
         })
-        .then(response => response.json())
+        .then(response => response.json()).then(()=>{
+            fetch('http://localhost:3001/UserData').then((data) =>{
+                console.log("data",data)
+                return data.json();
+            })
+        })
     }
 }
 let deleteuser = (id) =>{
-    fetch(`http://localhost:3001/UserData/${id}`, { method: 'DELETE' })
+    fetch(`http://localhost:3001/UserData/${id}`, { method: 'DELETE' }).then(()=>{
+        fetch('http://localhost:3001/UserData').then((data) =>{
+            console.log("data",data)
+            return data.json();
+        })
+    })
 }

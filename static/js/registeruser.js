@@ -36,11 +36,65 @@ let postData = () => {
         }
     })
     .then(response => response.json())
-    .then(data =>{ 
-        window.location.reload();
+    .then(() =>{ 
+        fetch('http://localhost:3001/UserData').then((data) =>{
+            console.log("data",data)
+            return data.json();
+        })
     });
 }
 
+const handleCompany = async() => {
+    const companyValue = document.getElementById('companyName').value;
+    const response = await fetch("http://localhost:3001/CompanyDetails", {
+        method: "POST",
+        body: JSON.stringify({
+            company_name: companyValue
+        }),
+        headers: {
+            "Content-type": "application/json; charset=UTF-8"
+        }
+    })
+    .then(response => response.json())
+    .then(() =>{ 
+        fetch('http://localhost:3001/CompanyDetails').then((data) =>{
+            console.log("data",data)
+            return data.json();
+        })
+    }).then(()=>{
+        fetchCompanyDetails();
+    })
+}
+const fetchCompanyDetails = async() =>{
+    const response = await fetch('http://165.232.181.217:8000/GetAllCompanies');
+    const data = await response.json();
+    let selectDiv = document.getElementById("company");
+    var opt = document.createElement('option');
+    opt.value = "selectCompany";
+    opt.innerHTML = "----Select your Company----";
+    selectDiv.appendChild(opt);
+    data.map((e,i)=>{
+        console.log("companyValue",company_name)
+        var opt = document.createElement('option');
+        opt.value = e;
+        opt.innerHTML = company_name;
+        selectDiv.setAttribute("key",i);
+        selectDiv.append(opt);
+    })
+    console.log("CompanyValue",data)
+}
+fetchCompanyDetails()
+
+const DeleteCompany = async() => {
+    let companyName = document.getElementById("company").getAttribute("key");
+    console.log("companyName",companyName)
+    fetch(`http://localhost:3001/CompanyDetails/${companyName}`, { method: 'DELETE' }).then(()=>{
+        fetchCompanyDetails();
+    })
+}
+let deleteuser = (id) =>{
+   
+}
 var GetTemplate = function (id) {
     let template = document.getElementsByTagName('template')[0];
     let clone = template.content.cloneNode(true);
